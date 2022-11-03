@@ -44,12 +44,16 @@ class BarChartSample2State extends State<BarChartSample2> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  textFormatter(averageVolume.toInt().toString()),
-                  style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w900),
+                Flexible(
+                  child: Text(
+                    averageVolume == 0
+                        ? "Data not Available"
+                        : textFormatter(averageVolume.toInt().toString()),
+                    style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w900),
+                  ),
                 ),
                 const SizedBox(
                   width: 5,

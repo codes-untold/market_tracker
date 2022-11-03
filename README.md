@@ -1,6 +1,6 @@
 ### Description
 
-Welcome aboard fellow developer, MarketTracker is flutter app developed to get live data of thestock market report of 10 companies and displays the data in a bar chart for
+Welcome aboard fellow developer, MarketTracker is flutter app developed to get live data of the stock market report of 10 companies and displays the data in a bar chart for
 better illustration
 
 ### Companies
@@ -30,5 +30,3 @@ company when selected
 
 -  Use tool D reloads the page in case of an unexpected error response from the API
 
-
-samples, guidance on mobile development, and a full API reference.

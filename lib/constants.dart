@@ -1,6 +1,6 @@
 import 'package:market_stack/models/company_model.dart';
 
-const String apiKey = "0247adbf99672a0597a43a67f7864126";
+const String apiKey = "4140ad2ab1d9b4bb186c9831c3647897";
 List<CompanyModel> stockList = [
   CompanyModel(name: "Apple Inc", stockTicker: "AAPL"),
   CompanyModel(name: "Alphabet Inc - Class C", stockTicker: "GOOG"),
