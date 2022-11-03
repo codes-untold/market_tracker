@@ -35,7 +35,7 @@ class _ReportScreenState extends State<ReportScreen> {
   @override
   void initState() {
     super.initState();
-    // fetchData();
+    fetchData();
     listenForConnection();
   }
 
@@ -77,7 +77,7 @@ class _ReportScreenState extends State<ReportScreen> {
                         color: Colors.red,
                         child: const Center(
                           child: Text(
-                            "NO INTERNET CONNECTION",
+                            "DEVICE OFFLINE",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -103,7 +103,6 @@ class _ReportScreenState extends State<ReportScreen> {
                         onSubmitted: (value) async {
                           offset = 1;
                           await fetchData(callback: () {
-                            print("aaaa");
                             setState(() {
                               selectedStock = stockList
                                   .where((element) => element.name == value)
@@ -160,6 +159,7 @@ class _ReportScreenState extends State<ReportScreen> {
                                           gravity: ToastGravity.TOP);
                                     } else {
                                       setState(() {
+                                        offset = 1;
                                         lowerDate = picked;
                                         fetchData();
                                       });
@@ -222,11 +222,25 @@ class _ReportScreenState extends State<ReportScreen> {
                                   fetchedStockData == null
                                       ? SizedBox(
                                           height: size.height * 0.5,
-                                          child: const Center(
-                                            child: Text(
-                                              "Unable to fetch Data , Try Again",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold),
+                                          child: Center(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Image.asset(
+                                                  "assets/fetch_error.png",
+                                                  width: 150,
+                                                ),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                const Text(
+                                                  "Error fetching stock report - Try again",
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                )
+                                              ],
                                             ),
                                           ),
                                         )
@@ -333,7 +347,10 @@ class _ReportScreenState extends State<ReportScreen> {
         )
       ])),
       floatingActionButton: InkWell(
-        onTap: () => fetchData(),
+        onTap: () {
+          offset = 1;
+          fetchData();
+        },
         child: Container(
           decoration: BoxDecoration(
               color: const Color(0xffff5182),
