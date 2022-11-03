@@ -210,8 +210,8 @@ class _ReportScreenState extends State<ReportScreen> {
                           )
                         ],
                       ),
-                      const SizedBox(
-                        height: 50,
+                      SizedBox(
+                        height: size.height * 0.03,
                       ),
                       isScreenBusy
                           ? const Expanded(child: Center(child: CustomLoader()))
@@ -321,7 +321,7 @@ class _ReportScreenState extends State<ReportScreen> {
           ),
         ),
         SizedBox(
-          height: 100,
+          height: size.height * 0.07,
           width: double.infinity,
           child: fetchedStockData == null
               ? const SizedBox.shrink()
