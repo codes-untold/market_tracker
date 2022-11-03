@@ -1,3 +1,6 @@
+### MARKET-TRACKER 
+## Flutter App with [Market Stack API](https://marketstack.com) Integration
+
 ### Description
 
 Welcome aboard fellow developer, MarketTracker is flutter app developed to get live data of the stock market report of 10 companies and displays the data in a bar chart for
